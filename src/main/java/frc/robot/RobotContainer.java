@@ -21,20 +21,25 @@ import edu.wpi.first.wpilibj2.command.Command;
 public class RobotContainer {
   // The robot's subsystems and commands are defined here...
   public static final Drivetrain m_drivetrain = new Drivetrain();
-  public static Object driverController;
+  // public static Object driverController;
   private final ExampleSubsystem m_exampleSubsystem = new ExampleSubsystem();
 
   private final ExampleCommand m_autoCommand = new ExampleCommand(m_exampleSubsystem);
+
+  // public Joystick driverController = new Joystick(Constants.DRIVER_CONTROLLER);
 
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
   public RobotContainer() {
     // Configure the button bindings
     configureButtonBindings();
   };
-
+  
+    // setDefaultCommand(new DriveArcade());
   
     //Controller 
     public PS4Controller m_driver = new PS4Controller(0);
+
+    public static PS4Controller driverController = new PS4Controller(Constants.DRIVER_CONTROLLER);
 
 
     public void driveRobot(){
@@ -49,6 +54,7 @@ public class RobotContainer {
    * edu.wpi.first.wpilibj2.command.button.JoystickButton}.
    */
   private void configureButtonBindings() {}
+
 
   /**
    * Use this to pass the autonomous command to the main {@link Robot} class.
